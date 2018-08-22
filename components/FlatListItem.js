@@ -7,6 +7,11 @@ import {
     StyleSheet
 } from 'react-native';
 
+import { PlayerScreen } from '../screenNames';
+
+// import tracks from '../data/data';
+
+
 class FlatListItem extends Component {
     constructor(props) {
         super(props);
@@ -25,10 +30,8 @@ class FlatListItem extends Component {
     }
 
     render() {
-        var a = this.props.indexStart;
-        // console.log(a);
-        var b = this.props.index;
-        // console.log(b);
+        // const { navigation } = this.props;
+        console.log(`this.props.navigation = ${JSON.stringify(this.props.navigation)}`);
         return (
             <View style={styles.container}>
                 <View style={{
@@ -37,7 +40,9 @@ class FlatListItem extends Component {
                 }}>
                     <TouchableOpacity 
                         style={styles.button}
-                        
+                        onPress={() => {
+                            this.props.navigation.navigate(PlayerScreen);
+                            }}
                     >
                         <Text>{this.props.item.title} - {this.props.item.artist}</Text>
                     </TouchableOpacity>
@@ -57,6 +62,7 @@ const styles = StyleSheet.create ({
         width: screenWidth,
         alignItems: 'center',
         justifyContent: 'center',
+        backgroundColor: 'white',
     },
     button: {
         flex: 1,

@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
     paddingLeft: 24,
     paddingRight: 24,
     marginTop: 20,
+    backgroundColor: 'white',
   },
   image: {
     width: imageSize,
